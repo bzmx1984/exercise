@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机发信息</title>
+    <style>
+        .warp{
+            width: 237px;
+            height:476px;
+            background: url("img/phone.jpg") no-repeat;
+            position: relative;
+            top:0;
+            left:50%;
+            margin-left: -118.5px;
+        }
+        .cent{
+            width: 188px;
+            height: 333px;
+            position: absolute;
+            top: 71px;
+            left: 25px;
+        }
+        .import-cent{
+            height: 300px;
+        }
+        .import-cent ul{
+            padding: 4px;
+            margin: 0;
+            list-style: none;
+            font-size: 12px;
+        }
+        .import-cent ul li{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+
+        }
+        .import-cent ul li img{
+            vertical-align: middle;
+        }
+        .import{
+            border-top:1px solid #ccc;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        .import #icon{
+            padding:0 2px;
+            width: 24px;
+            height: 33px;
+            float: left;
+        }
+        .import #icon img{
+
+            vertical-align: middle;
+        }
+        .import #txt{
+            width: 110px;
+            height: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        .import #btn{
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="warp">
+    <div class="cent">
+        <div class="import-cent">
+            <ul id="cent">
+
+            </ul>
+        </div>
+        <div class="import">
+            <div id="icon">
+                <img src="img/1.png" alt="" id="pic">
+            </div>
+            <input type="text" id="txt"/>
+            <input type="submit" id="btn" value="发送"/>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var Obtn=document.getElementById("btn");
+    var Oinput=document.getElementById("txt");
+    var Oimg=document.getElementById("pic");
+    var Ocent=document.getElementById("cent");
+
+    var onoff = true;
+    Oimg.onclick=function(){
+        if(onoff){
+            Oimg.src="img/2.png";
+        }else{
+            Oimg.src="img/1.png";
+        }
+        onoff = !onoff;
+    }
+
+    Obtn.onclick=function(){
+        if(onoff){
+            Ocent.innerHTML="<li style='float: left'><img src='img/1.png'>" +Oinput.value+"</li>"+Ocent.innerHTML;
+        }else{
+            Ocent.innerHTML="<li style='float: left;text-align: right'>" +Oinput.value+"<img src='img/2.png'></li>"+Ocent.innerHTML;
+        }
+        Oinput.value="";
+    }
+
+
+
+</script>
+</body>
+</html>
