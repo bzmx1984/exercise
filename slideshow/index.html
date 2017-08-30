@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+
+    <style>
+        .warp{
+            width: 320px;
+            height: 480px;
+            margin: 0 auto;
+            border:1px solid #cccccc;
+        }
+        .tab{
+            padding-top: 10px;
+            text-align: center;
+        }
+        .tab a{
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .pic{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .pic ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .pic ul li img{
+            width: 300px;
+            height: 300px;
+        }
+        .pic p{
+            height: 30px;
+            line-height: 30px;
+            background-color: #f1f1f1;
+            position: relative;
+            top:-50px;
+            left: 0;
+            opacity: .7;
+        }
+
+        .warp p{
+            text-align: center;
+        }
+        .btn{
+            height: 30px;
+            text-align: center;
+        }
+
+        .btn a{
+            text-decoration: none;
+            padding: 0 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="warp">
+    <div class="tab">
+        <a href="">循环顺序播放</a>
+        <a href="">循环顺序播放</a>
+        <p>图片顺序播放</p>
+    </div>
+    <div class="pic">
+        <ul>
+            <li><img src="img/1a.jpg"/></li>
+            <!--<li><img src="img/2.jpg"/></li>-->
+            <!--<li><img src="img/3.jpg"/></li>-->
+            <!--<li><img src="img/4.jpg"/></li>-->
+            <!--<li><img src="img/5.jpg" /></li>-->
+        </ul>
+        <p>这是第一张</p>
+    </div>
+    <p>4/5</p>
+    <div class="btn">
+        <a href="">上一张</a>
+        <a href="">下一张</a>
+    </div>
+</div>
+
+</body>
+</html>
