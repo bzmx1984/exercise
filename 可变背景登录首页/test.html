@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<link href="images/index.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+function turn(x)
+	{ 
+	document.getElementById("id").className="bg"+x+"";
+	}
+</script>
+<body>
+<div class="bg" id="id">
+	<div class="bg_cen">
+    	<div class="logo_bg">
+       	  	<form id="form1" name="form1" method="post" action="">
+            <table width="330" border="0" cellspacing="0" cellpadding="0">
+        	  <tr>
+        	    <td height="59" colspan="3"><img src="images/logo.png" width="296" height="41" /></td>
+       	      </tr>
+               <tr>
+        	    <td width="58" height="6"></td>
+        	    <td width="175"></td>
+        	    <td width="97"></td>
+      	    </tr>
+        	  <tr>
+        	    <td width="58" height="29"><img src="images/userId.gif" width="41" height="15" /></td>
+        	    <td width="175">
+        	      <input type="text" name="username" id="username" class="TextField" />
+                 </td>
+        	    <td width="97" rowspan="2"><input type="submit" name="button" id="button" value="" class="btn" /></td>
+      	    </tr>
+        	  <tr>
+        	    <td height="29"><img src="images/password.gif" width="41" height="15" /></td>
+        	    <td><input type="text" name="password" id="password" class="TextField" /></td>
+       	      </tr>
+        	  <tr>
+        	    <td height="24"><img src="images/style.gif" width="41" height="15" /></td>
+        	    <td>
+                <select name="select" id="select" onChange="turn(this.value)">
+                  <option value="1">蓝色经典</option>
+                  <option value="2">红色庄重</option>
+                  <option value="3">绿色清新</option>
+                  <option value="4">灰色深沉</option>
+              </select>
+            </td>
+        	    <td>&nbsp;</td>
+      	    </tr>
+      	  </table>
+		</form>
+         </div> 
+	</div>
+</div>
+</body>
+</html>

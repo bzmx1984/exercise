@@ -56,6 +56,9 @@
             text-decoration: none;
             padding: 0 10px;
         }
+        .none{
+            display: none;
+        }
     </style>
 
 </head>
@@ -71,19 +74,41 @@
     <div class="pic">
         <ul>
             <li><img src="img/1a.jpg"/></li>
-            <!--<li><img src="img/2.jpg"/></li>-->
-            <!--<li><img src="img/3.jpg"/></li>-->
-            <!--<li><img src="img/4.jpg"/></li>-->
-            <!--<li><img src="img/5.jpg" /></li>-->
+            <li class="none"><img src="img/2.jpg"/></li>
+            <li class="none"><img src="img/3.jpg"/></li>
+            <li class="none"><img src="img/4.jpg"/></li>
+            <li class="none"><img src="img/5.jpg" /></li>
         </ul>
         <p>这是第一张</p>
     </div>
     <p>4/5</p>
     <div class="btn">
-        <a href="">上一张</a>
-        <a href="">下一张</a>
+        <input type="button" value="上一张" id="forward">
+        <input type="button" value="下一张" id="next">
     </div>
 </div>
+
+<script>
+    var Oforward=document.getElementById("forward");
+    var Onext=document.getElementById("next");
+    var Opic=document.getElementsByName("ul");
+
+
+    alert(Opic.length);
+
+//    Onext.onclick=function(){
+//
+//        for(var i=0; i<Opic.length; i++){
+//
+//        }
+//    }
+
+
+
+</script>
+
+
+
 
 </body>
 </html>
