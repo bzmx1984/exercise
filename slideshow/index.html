@@ -24,13 +24,8 @@
             height: 300px;
             margin: 0 auto;
         }
-        .pic ul{
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
 
-        .pic ul li img{
+        .pic img{
             width: 300px;
             height: 300px;
         }
@@ -72,16 +67,10 @@
         <p>图片顺序播放</p>
     </div>
     <div class="pic">
-        <ul>
-            <li><img src="img/1a.jpg"/></li>
-            <li class="none"><img src="img/2.jpg"/></li>
-            <li class="none"><img src="img/3.jpg"/></li>
-            <li class="none"><img src="img/4.jpg"/></li>
-            <li class="none"><img src="img/5.jpg" /></li>
-        </ul>
-        <p>这是第一张</p>
+        <img src="img/1a.jpg" id="img"/>
+        <p id="p1">这是第一张</p>
     </div>
-    <p>4/5</p>
+    <p id="num">4/5</p>
     <div class="btn">
         <input type="button" value="上一张" id="forward">
         <input type="button" value="下一张" id="next">
@@ -91,17 +80,22 @@
 <script>
     var Oforward=document.getElementById("forward");
     var Onext=document.getElementById("next");
-    var Opic=document.getElementsByName("ul");
+    var Oimg=document.getElementById("img");
+    var Op1=document.getElementById("p1");
+    var Onum=document.getElementById("num");
+    var ImgArry=["img/1a.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+    var TxtArry=["这是第一张图片","这是第二张图片","这是第三张图片","这是第四张图片","这是第五张图片"];
+    var n=4;
 
+    Onext.onclick=function(){
 
-    alert(Opic.length);
-
-//    Onext.onclick=function(){
-//
-//        for(var i=0; i<Opic.length; i++){
-//
-//        }
-//    }
+    };
+change();
+    function change(){
+        Oimg.src=ImgArry[n];
+        Op1.innerHTML=TxtArry[n];
+        Onum.innerHTML= (n+1)+"/5";
+    }
 
 
 
