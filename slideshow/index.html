@@ -15,7 +15,14 @@
             padding-top: 10px;
             text-align: center;
         }
-        .tab a{
+        .tab #top,#down{
+            display: inline-block;
+            padding: 4px;
+            border: 1px solid #cccccc;
+            cursor: pointer;
+        }
+
+        .tab input[button]{
             text-decoration: none;
             padding: 0 10px;
         }
@@ -61,16 +68,18 @@
 
 
 <div class="warp">
-    <div class="tab">
-        <a href="">循环顺序播放</a>
-        <a href="">循环顺序播放</a>
-        <p>图片顺序播放</p>
-    </div>
+<div class="tab" onclick="SayHello(event)">
+        <!--<input type="button" value="顺序播放" id="top">-->
+        <!--<input type="button" value="循环播放" id="down">-->
+    <span id="top">顺序播放</span>
+    <span id="down">循环播放</span>
+        <p id="onOfTxt">顺序播放</p>
+</div>
     <div class="pic">
         <img src="img/1a.jpg" id="img"/>
         <p id="p1">这是第一张</p>
     </div>
-    <p id="num">4/5</p>
+    <p id="num">1/5</p>
     <div class="btn">
         <input type="button" value="上一张" id="forward">
         <input type="button" value="下一张" id="next">
@@ -83,18 +92,76 @@
     var Oimg=document.getElementById("img");
     var Op1=document.getElementById("p1");
     var Onum=document.getElementById("num");
+    var top=document.getElementById("top");
+    var down=document.getElementById("down");
+    var onOfTxt=document.getElementById("onOfTxt");
     var ImgArry=["img/1a.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
     var TxtArry=["这是第一张图片","这是第二张图片","这是第三张图片","这是第四张图片","这是第五张图片"];
-    var n=4;
+    var n=0;
+    var onOff=true;
 
-    Onext.onclick=function(){
+    function SayHello(e) {
+        e = window.event || e;
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true;
+        }
+    }
 
+    top.onclick=function(){
+        onOfTxt.innerHTML="图片顺序播放";
+        alert(1);
     };
-change();
+    down.onclick=function(){
+
+        onOfTxt.innerHTML="图片循环播放";
+        alert(2);
+    };
+
+    if(onOff){
+        Onext.onclick=function(){
+            n++;
+            if(n>ImgArry.length-1){
+                n=0;
+            }
+            change();
+        };
+
+    }else{
+        Oforward.onclick=function(){
+            n--;
+            if(n>ImgArry.length){
+                n=ImgArry.length;
+            }
+            change();
+        };
+    }
+
+
+//    Onext.onclick=function(){
+//        n++;
+//        if(n>ImgArry.length-1){
+//            alert("这已经是最后一张了，不能向后点了！");
+//        }else {
+//            change();
+//        }
+//    };
+
+//    Oforward.onclick=function(){
+//        n--;
+//        if(n<0){
+//            alert("这已经是最前面一张了，不能向前点了！")
+//        }else{
+//            change();
+//        }
+//
+//    };
+
     function change(){
         Oimg.src=ImgArry[n];
         Op1.innerHTML=TxtArry[n];
-        Onum.innerHTML= (n+1)+"/5";
+        Onum.innerHTML= (n+1)+"/"+ImgArry.length;
     }
 
 
