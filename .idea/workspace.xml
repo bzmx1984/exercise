@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d3259f6-c4b5-4de3-a3f0-5af674279c7d" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow/index.html" afterPath="$PROJECT_DIR$/slideshow/index.html" />
-    </list>
+    <list default="true" id="3d3259f6-c4b5-4de3-a3f0-5af674279c7d" name="默认的" comment="" />
     <ignored path="exercise.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
