@@ -68,7 +68,7 @@
 
 
 <div class="warp">
-<div class="tab" onclick="SayHello(event)">
+<div class="tab">
         <!--<input type="button" value="顺序播放" id="top">-->
         <!--<input type="button" value="循环播放" id="down">-->
     <span id="top">顺序播放</span>
@@ -100,24 +100,23 @@
     var n=0;
     var onOff=true;
 
-    function SayHello(e) {
-        e = window.event || e;
-        if (e.stopPropagation) {
-            e.stopPropagation();
-        } else {
-            e.cancelBubble = true;
-        }
-    }
 
-    top.onclick=function(){
-        onOfTxt.innerHTML="图片顺序播放";
-        alert(1);
-    };
-    down.onclick=function(){
+//    if(onOff){
+//        top.onclick=function(){
+//            onOfTxt.innerHTML="图片顺序播放";
+//            onOff=false;
+//        };
+//    }else{
+//        top.onclick=function(){
+//            onOfTxt.innerHTML="图片循环播放";
+//            onOff=true;
+//
+//        };
+//    }
 
-        onOfTxt.innerHTML="图片循环播放";
-        alert(2);
-    };
+
+
+
 
     if(onOff){
         Onext.onclick=function(){
