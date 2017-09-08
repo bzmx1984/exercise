@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" id="btn">
+
+<script>
+    var Obtn=document.getElementById("btn");
+
+    Obtn.onclick=function(){
+        var xhr=null;
+
+        try{
+            xhr=new XMLHTTPRequest();
+        }catch(e){
+            xhr=new ActiveXObject('Microsoft.XMLHTTP');
+            alert("error");
+        }
+
+        xhr.open('get','1.txt',true);
+        xhr.send();
+
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                alert(xhr.responseText);
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>
