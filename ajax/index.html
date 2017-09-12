@@ -6,31 +6,31 @@
 </head>
 <body>
 <input type="button" value="点击" id="btn">
+<script src="ajax.js"></script>
+<!--<script>-->
+    <!--var Obtn=document.getElementById("btn");-->
 
-<script>
-    var Obtn=document.getElementById("btn");
+    <!--Obtn.onclick=function(){-->
+        <!--var xhr=null;-->
 
-    Obtn.onclick=function(){
-        var xhr=null;
+        <!--try{-->
+            <!--xhr=new XMLHTTPRequest();-->
+        <!--}catch(e){-->
+            <!--xhr=new ActiveXObject('Microsoft.XMLHTTP');-->
+            <!--alert("error");-->
+        <!--}-->
 
-        try{
-            xhr=new XMLHTTPRequest();
-        }catch(e){
-            xhr=new ActiveXObject('Microsoft.XMLHTTP');
-            alert("error");
-        }
+        <!--xhr.open('get','1.txt',true);-->
+        <!--xhr.send();-->
 
-        xhr.open('get','1.txt',true);
-        xhr.send();
+        <!--xhr.onreadystatechange=function(){-->
+            <!--if(xhr.readyState==4){-->
+                <!--alert(xhr.responseText);-->
+            <!--}-->
+        <!--}-->
 
-        xhr.onreadystatechange=function(){
-            if(xhr.readyState==4){
-                alert(xhr.responseText);
-            }
-        }
+    <!--}-->
 
-    }
-
-</script>
+<!--</script>-->
 </body>
 </html>

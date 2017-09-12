@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<!--<div id="app">-->
+    <!--<input type="text" value="" v-model="meg"><br/>-->
+    <!--{{meg}}-->
+<!--</div>-->
+
+<div class="box">
+    <ul>
+        <li v-for="name in ary">{{name}}-----{{$index}}</li>
+    </ul>
+</div>
+
+<script>
+//    new Vue({
+//        el:"#app",
+//        data:{
+//            meg:""
+//        }
+//    })
+
+    new Vue({
+        el:".box",
+        data:{
+            ary:['apple','oringe','plae','banner'],
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

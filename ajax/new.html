@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="点击" id="btn">
+
+<ul id="ul1"></ul>
+
+
+<script>
+    var oBtn = document.getElementById("btn");
+
+    oBtn.onclick = function () {
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('get','getNews.php',true);
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var newDate = JSON.parse(xhr.responseText);
+                    //console.log(newDate);
+                    var oUl = document.getElementById("ul1");
+                    var html = '';
+                    for (i = 0; i < newDate.length; i++) {
+                        html += '<li><a href="">' + newDate[i].title + '</a> <span>' + newDate[i].date + '</span></li>';
+                    }
+                    oUl.innerHTML=html;
+                } else {
+                    alert("出错了！");
+                }
+
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
