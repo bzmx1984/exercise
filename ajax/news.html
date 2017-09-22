@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax1.js"></script>
+    <script>
+
+            window.onload = function() {
+
+            var oBut=document.getElementById('btn');
+
+            var oBtn = document.getElementById('btn');
+
+
+            oBtn.onclick = function() {
+
+                ajax('get','getNews.php','',function(data) {
+                    var newDate = JSON.parse( data );
+
+                    var oUl=document.getElementById('ul1');
+                    var html = '';
+                    for(var i=0;i<newDate.length;i++){
+                        html+='<li><a href="">'+newDate[i].title+'</a> <span>'+newDate[i].date+'</span></li>'
+                    }
+
+                    oUl.innerHTML=html;
+
+                })
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点击" id="btn">
+
+<ul id="ul1"></ul>
+</body>
+
+
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <script src="ajax1.js"></script>
+    <style>
+        #ul1 {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        #ul1 li {
+            width: 260px;
+            list-style: none;
+            float: left;
+            margin-right: 6px;
+        }
+
+        #ul1 li img {
+            width: 240px;
+        }
+
+        #ul1 li div {
+            border: 1px solid #000000;
+            padding: 9px;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            var oUl = document.getElementById("ul1");
+            var oLi = oUl.getElementsByTagName('li');
+            var len = oLi.length;
+
+
+                ajax('get', 'getPics.php', 'cpage=1', function (data) {
+
+                    var data = JSON.parse(data);
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        var _index = getShort();
+
+                        var oDiv = document.createElement('div');
+                        var oImg = document.createElement('img');
+                        oImg.src = data[i].preview;
+                        oDiv.appendChild(oImg);
+                        var oP = document.createElement('p');
+                        oP.innerHTML = data[i].title;
+                        oDiv.appendChild(oP);
+
+                        oLi[_index].appendChild(oDiv);
+                    }
+
+                });
+
+
+                function getShort() {
+                    var index = 0;
+                    var liHeight = oLi[index].offsetHeight;
+                    for (var i = 1; i < len; i++) {
+                        if (oLi[i].offsetHeight < liHeight) {
+                            index = [i];
+                            liHeight = oLi[i].offsetHeight;
+                        }
+                    }
+                    return index;
+                }
+            }
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+
+</body>
+</html>

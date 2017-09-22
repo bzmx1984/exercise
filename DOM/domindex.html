@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <span></span>
+</div>
+<script>
+    var oBox=document.getElementById('box');
+    var oUl=document.getElementById('ul1');
+
+    //console.log(oUl.childNodes);
+
+    //console.log(oUl.children);
+    //console.log(oUl.firstChild);
+    //console.log(oUl.firstElementChild);
+    //console.log(oBox.firstElementChild);
+
+    //console.log(oUl.lastChild);
+    //console.log(oUl.lastElementChild);
+
+    //console.log(oUl.parentNode);
+    //console.log(oBox.nextSibling);
+    console.log(oUl.nextElementSibling);
+
+    if(oUl.nodeType=1){
+        console.log(oUl.childNodes);
+    }
+
+</script>
+
+</body>
+</html>
